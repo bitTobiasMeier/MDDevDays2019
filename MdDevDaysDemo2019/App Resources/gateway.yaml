@@ -1,0 +1,22 @@
+gateway:
+  schemaVersion: 1.0.0-preview2
+  name: MdDevDaysDemo2019Gateway
+  properties:
+    description: MdDevDaysDemo2019 Gateway Resource
+    sourceNetwork:
+      name: Open
+    destinationNetwork:
+      name: MdDevDaysDemo2019Network
+    tcp:
+      - name: DeliveryServiceTCP
+        port: "[parameters('DeliveryService_ingressport')]"
+        destination:
+          applicationName: MdDevDaysDemo2019
+          serviceName: DeliveryService
+          endpointName: DeliveryServiceListener
+      - name: OrderServiceTCP
+        port: "[parameters('OrderService_ingressport')]"
+        destination:
+          applicationName: MdDevDaysDemo2019
+          serviceName: OrderService
+          endpointName: OrderServiceListener

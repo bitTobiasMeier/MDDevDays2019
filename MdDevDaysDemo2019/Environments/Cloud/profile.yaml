@@ -1,0 +1,20 @@
+## Visual Studio SFApp Publish Profile ##
+vsSFAppPublishProfile:
+  schemaVersion: 1.0.0-preview2
+  resourceGroupName: MDDevDays-rg
+  subscription:
+    id: f80c2805-6b0b-4d89-828e-fbf294eb4fe0
+    name: tobiasmeierbridgingit_personal
+    tenant:
+      id: 78341e36-098a-4db3-97a1-ecfdd1f63124
+      uniqueId: 4d91e65a-b9fb-4b0e-98c0-2baf1f7d4d24
+  location:
+    name: westeurope
+    displayName: West Europe
+  containerRegistry:
+    serverName: mddevdaysacr.azurecr.io
+    userName: MDDevDaysacr
+    resourceId: /subscriptions/f80c2805-6b0b-4d89-828e-fbf294eb4fe0/resourceGroups/MDDevDays-rg/providers/Microsoft.ContainerRegistry/registries/MDDevDaysacr
+    tenant:
+      id: 78341e36-098a-4db3-97a1-ecfdd1f63124
+      uniqueId: cfedd4c0-c2f7-4e15-8d78-c158206f2fc6

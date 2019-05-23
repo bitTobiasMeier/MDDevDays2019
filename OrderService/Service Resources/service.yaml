@@ -1,0 +1,28 @@
+﻿## Service definition ##
+application:
+  schemaVersion: 1.0.0-preview2
+  name: MdDevDaysDemo2019
+  properties:
+    services:
+      - name: OrderService
+        properties:
+          description: OrderService description.
+          osType: Windows
+          codePackages:
+            - name: OrderService
+              image: orderservice:dev
+              endpoints:
+                - name: OrderServiceListener
+                  port: 80
+              environmentVariables:
+                - name: DeliveryServiceName
+                  value: "[parameters('OrderService_DeliveryServiceName')]"
+              resources:
+                requests:
+                  cpu: "[parameters('OrderService_cpu')]"
+                  memoryInGB: 1
+          replicaCount: 1
+          networkRefs:
+            - name: MdDevDaysDemo2019Network
+              endpointRefs:
+                - name: OrderServiceListener
